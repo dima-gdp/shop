@@ -1,13 +1,7 @@
 <template>
   <div>
-    <a
-      class="catalog__pic"
-      href="#"
-    >
-      <img
-        :src="product.image"
-        :alt="product.item"
-      />
+    <a class="catalog__pic" href="#">
+      <img :src="product.image" :alt="product.item" />
     </a>
 
     <h3 class="catalog__title">
