@@ -2,7 +2,7 @@
   <ul class="catalog__list">
     <li class="catalog__item" v-for="product in products" :key="product.id">
       <ProductItem :product="product" />
-      <ProductColors :colors="product.colors" :groupColor="product.title"></ProductColors>
+      <ProductColors :colors="product.colors" />
     </li>
   </ul>
 </template>
