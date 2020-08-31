@@ -14,7 +14,7 @@
       </ul>
 
       <h1 class="content__title">Корзина</h1>
-      <span class="content__info">{{products.length}} товара</span>
+      <span class="content__info">{{products.length | declOfNum}}</span>
     </div>
 
     <section class="cart">
@@ -90,7 +90,7 @@
             </p>
             <p>
               Итого:
-              <b>{{products.length}}</b> товара на сумму
+              <b>{{products.length | declOfNum}}</b> на сумму
               <b>{{ totalPrice | numberFormat}} ₽</b>
             </p>
           </div>
@@ -112,13 +112,14 @@
 import BaseFormText from "@/components/BaseFormText";
 import BaseFormTextarea from "@/components/BaseFormTextarea";
 import numberFormat from '@/helpers/numberFormat';
+import declOfNum from "@/helpers/declOfNum";
 import {mapGetters} from 'vuex';
 import axios from  'axios';
 import API_BASE_URL from '@/config';
 
 export default {
   components: {BaseFormTextarea, BaseFormText},
-  filters: { numberFormat },
+  filters: { numberFormat, declOfNum},
   data() {
     return {
       formData: {},

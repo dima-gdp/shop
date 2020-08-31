@@ -13,7 +13,7 @@
       </ul>
 
       <h1 class="content__title">Корзина</h1>
-      <span class="content__info">{{products.length}} товара</span>
+      <span class="content__info">{{products.length | declOfNum}}</span>
     </div>
 
     <section class="cart">
@@ -48,10 +48,11 @@
 import { mapGetters } from 'vuex';
 import numberFormat from '@/helpers/numberFormat';
 import CartItem from '@/components/CartItem.vue';
+import declOfNum from "@/helpers/declOfNum";
 
 export default {
   components: { CartItem },
-  filters: { numberFormat },
+  filters: { numberFormat, declOfNum },
   computed: {
     ...mapGetters({ products: 'cartDetailProducts', totalPrice: 'cartTotalPrice' }),
   },
